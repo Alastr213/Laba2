@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+
+    // Завдання :
+    // a) - Вивести введений текст задом на перед
+    // b) - Підрахувати кількість чисел в тексті і вивести їх кількість
+
+    public static void main(String[] args) {
+        String s = "I am a student of group 532 456457 56r ";
+        String[] n = s.split(" ");
+        int number = 0;
+        for(String str : n) {
+            try {
+                Integer.parseInt(str);
+            }
+            catch(NumberFormatException e) {
+                continue;
+            }
+            number++;
+        }
+        System.out.println("Введений текст:" );
+        System.out.println(s);
+        String reversedString = new StringBuffer(s).reverse().toString();
+        System.out.println("Інвертований текст:" );
+        System.out.println(reversedString);
+        System.out.println("Кількість чисел в тексті:");
+        System.out.println(number);
+    }
+}
